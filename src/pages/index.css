@@ -1,0 +1,10 @@
+.content {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;
+}
+
+.test {
+  background: #F2F4F5;
+}
