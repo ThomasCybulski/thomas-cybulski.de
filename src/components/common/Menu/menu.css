@@ -1,0 +1,32 @@
+.icon {
+  color: hsla(0,0%,0%,0.85);
+}
+
+.active {
+  color: green;
+}
+
+.active .icon, a:hover .icon {
+  color: white;
+}
+
+.icon-xing {
+  grid-row-start: 6; 
+  grid-row-end: 6;
+}
+
+.icon-linked-in {
+  grid-row-start: 7; 
+  grid-row-end: 7; 
+}
+
+.icon-twitter {
+  grid-row-start: 8; 
+  grid-row-end: 8; 
+}
+
+.icon-github {
+  grid-row-start: 9; 
+  grid-row-end: 9; 
+}
+

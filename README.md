@@ -30,3 +30,8 @@ yarn && yarn develop
 - [ ] Add Netlify form with Recaptcha
 - [ ] Make the header responsive with a sidebar on tablet/mobile
 - [ ] Add netlify redirects
+
+
+### Licence
+
+https://www.flaticon.com/free-icon/germany_197571

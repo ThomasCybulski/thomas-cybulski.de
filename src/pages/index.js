@@ -3,27 +3,36 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { Layout, Container } from '../components/common'
 import SEO from '../components/common/SEO'
-import './index.css'
 
 const IndexPage = () => (
 	<Layout>
-		<div className="test">
+		<IndexLayout>
 			<React.Fragment>
 				<SEO title="welcome" />
 				<Welcome as={Container}>
 					<h2>
 						<FormattedMessage id="welcome" />
-						<div className="content">
-						</div>
+						<IndexLayoutGrid></IndexLayoutGrid>
 					</h2>
 				</Welcome>
 			</React.Fragment>
-		</div>
+		</IndexLayout>
 	</Layout>
 )
 
 const Welcome = styled.div` 
 	padding: 2rem 0;
+`
+
+const IndexLayout = styled.div` 
+	background: #F2F4F5;
+`
+
+const IndexLayoutGrid = styled.div` 
+	display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;
 `
 
 export default IndexPage

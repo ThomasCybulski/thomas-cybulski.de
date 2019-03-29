@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledMenu = styled.div`
+export const MenuGrid = styled.div`
     display: grid;
     grid-template-rows: 25px 57px 57px 57px 1fr 40px 40px 40px 40px 40px 10px;
     grid-template-areas: 

@@ -8,14 +8,15 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab, faTwitter, faGithub, faXing, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faCircle, faHome, faAddressCard, faBook } from '@fortawesome/free-solid-svg-icons'
 
-import { StyledMenu, MenuHome, MenuAbout, MenuResume, MenuXing, MenuTwitter, MenuLinkedin, MenuGithub, MenuLanguage } from './styles'
+import { MenuGrid, MenuHome, MenuAbout, MenuResume, MenuXing, MenuTwitter, MenuLinkedin, MenuGithub, MenuLanguage } from './styles'
+import "./menu.css"
 
 library.add(fab, faCircle, faHome, faAddressCard, faTwitter, faGithub, faXing, faLinkedinIn, faBook)
 
 const Menu = () => (
 	<Context.Consumer>
 		{({ toggleLanguage, lang }) => (
-			<StyledMenu>
+			<MenuGrid>
 				<MenuHome>
 					<Link to="/" activeClassName="active">
 						<span className="fa-layers fa-fw fa-2x">
@@ -67,7 +68,7 @@ const Menu = () => (
 				<MenuLanguage>
 					<SelectLanguage lang={lang} toggleLanguage={toggleLanguage} />
 				</MenuLanguage>
-			</StyledMenu>
+			</MenuGrid>
 		)}
 	</Context.Consumer>
 )
