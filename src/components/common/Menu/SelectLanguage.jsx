@@ -1,5 +1,6 @@
 import React from 'react'
 import { compose, withStateHandlers } from 'recompose'
+import styled from 'styled-components'
 import "./menu.css"
 import germanFlagColoured from "../../../images/german_flag_coloured.png"
 import englishlagColoured from "../../../images/english_flag_coloured.png"
@@ -7,14 +8,10 @@ import germanFlagSW from "../../../images/german_flag_sw.png"
 import englishlagSW from "../../../images/english_flag_sw.png"
 
 const SelectLanguage = ({ selectLanguage, lang }) => (
-	<div>
-		<img src={germanFlagColoured} alt="German Language"></img>
-		<img src={englishlagColoured} alt="English Language"></img>
-		<select value={lang} onChange={e => selectLanguage(e.target.value)}>
-			<option value="en">English</option>
-			<option value="de">Deutsch</option>
-		</select>
-	</div>
+	<SelectLanguageGrid>
+		<img className="language-icon" src={lang === 'de' ? germanFlagColoured : germanFlagSW} alt="German Language" onClick={() => selectLanguage("de")}></img>
+		<img className="language-icon" src={lang === 'en' ? englishlagColoured : englishlagSW} alt="English Language" onClick={() => selectLanguage("en")}></img>
+	</SelectLanguageGrid>
 )
 
 const enhance = compose(
@@ -30,5 +27,11 @@ const enhance = compose(
 		}
 	)
 )
+
+const SelectLanguageGrid = styled.div` 
+	display: grid;
+	grid-template-rows: 40px 40px;
+	justify-items: center;
+`
 
 export default enhance(SelectLanguage)

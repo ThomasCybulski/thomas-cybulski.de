@@ -1,4 +1,4 @@
-.icon {
+.menu-icon, .menu-sub-icon {
   color: hsla(0,0%,0%,0.85);
 }
 
@@ -6,27 +6,20 @@
   color: green;
 }
 
-.active .icon, a:hover .icon {
+a:hover .menu-sub-icon {
+  color: green;
+}
+
+.active .menu-icon, a:hover .menu-icon {
   color: white;
 }
 
-.icon-xing {
-  grid-row-start: 6; 
-  grid-row-end: 6;
+.language-icon {
+  cursor: pointer;
+  border-radius: 50px;
+  width: 20%;
 }
 
-.icon-linked-in {
-  grid-row-start: 7; 
-  grid-row-end: 7; 
+.language-icon:hover {
+  box-shadow: 0 0 0 2px green, 0 0 0 7px #ffffff;
 }
-
-.icon-twitter {
-  grid-row-start: 8; 
-  grid-row-end: 8; 
-}
-
-.icon-github {
-  grid-row-start: 9; 
-  grid-row-end: 9; 
-}
-

@@ -1,70 +1,23 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Context } from '../../common'
 import SelectLanguage from './SelectLanguage'
+import MenuItem from './MenuItem'
+import MenuSubItem from './MenuSubItem'
+import config from '../../../../data/config.js'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab, faTwitter, faGithub, faXing, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faCircle, faHome, faAddressCard, faBook } from '@fortawesome/free-solid-svg-icons'
-
-import { MenuGrid, MenuHome, MenuAbout, MenuResume, MenuXing, MenuTwitter, MenuLinkedin, MenuGithub, MenuLanguage } from './styles'
-import "./menu.css"
-
-library.add(fab, faCircle, faHome, faAddressCard, faTwitter, faGithub, faXing, faLinkedinIn, faBook)
+import { MenuGrid, MenuLanguage } from './styles'
 
 const Menu = () => (
 	<Context.Consumer>
 		{({ toggleLanguage, lang }) => (
 			<MenuGrid>
-				<MenuHome>
-					<Link to="/" activeClassName="active">
-						<span className="fa-layers fa-fw fa-2x">
-							<FontAwesomeIcon icon={["fas", "circle"]} />
-							<FontAwesomeIcon className="icon" icon="home" transform="shrink-10" inverse />
-						</span>
-					</Link>
-				</MenuHome>
-				<MenuAbout>
-					<Link className="link" to="/about" activeClassName="active" partiallyActive={true}>
-						<span className="fa-layers fa-fw fa-2x">
-							<FontAwesomeIcon icon={["fas", "circle"]} />
-							<FontAwesomeIcon className="icon" icon="address-card" transform="shrink-10" inverse />
-						</span>
-					</Link>
-				</MenuAbout>
-				<MenuResume>
-					<Link className="link" to="/resume" activeClassName="active" partiallyActive={true}>
-						<span className="fa-layers fa-fw fa-2x">
-							<FontAwesomeIcon icon={["fas", "circle"]} />
-							<FontAwesomeIcon className="icon" icon="book" transform="shrink-10" inverse />
-						</span>
-					</Link>
-				</MenuResume>
-				<MenuXing>
-					<a href="https://www.xing.com/profile/Thomas_Cybulski2/cv"
-						title="Xing - Thomas Cybulski">
-						<FontAwesomeIcon className="icon" icon={["fab", "xing"]} />
-					</a>
-				</MenuXing>
-				<MenuLinkedin>
-					<a href="https://www.linkedin.com/in/thomas-cybulski/"
-						title="LinkedIn - Thomas Cybulski">
-						<FontAwesomeIcon className="icon" icon={["fab", "linkedin-in"]} />
-					</a>
-				</MenuLinkedin>
-				<MenuTwitter>
-					<a href="https://twitter.com/tho_cyb"
-						title="Twitter - Thomas Cybulski">
-						<FontAwesomeIcon className="icon" icon={["fab", "twitter"]} />
-					</a>
-				</MenuTwitter>
-				<MenuGithub>
-					<a href="https://github.com/ThomasCybulski"
-						title="Github - Thomas Cybulski">
-						<FontAwesomeIcon className="icon" icon={["fab", "github"]} />
-					</a>
-				</MenuGithub>
+				<MenuItem position="home" icon="home" to="/"></MenuItem>
+				<MenuItem position="about" icon="address-card" to="/about"></MenuItem>
+				<MenuItem position="resume" icon="book" to="/resume"></MenuItem>
+				<MenuSubItem position="xing" icon="xing" to={config.socialLinks.xing}></MenuSubItem>
+				<MenuSubItem position="linkedin" icon="linkedin-in" to={config.socialLinks.linkedin}></MenuSubItem>
+				<MenuSubItem position="twitter" icon="twitter" to={config.socialLinks.twitter}></MenuSubItem>
+				<MenuSubItem position="github" icon="github" to={config.socialLinks.github}></MenuSubItem>
 				<MenuLanguage>
 					<SelectLanguage lang={lang} toggleLanguage={toggleLanguage} />
 				</MenuLanguage>

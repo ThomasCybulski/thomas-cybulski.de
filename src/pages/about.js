@@ -32,6 +32,7 @@ const AboutPage = () => (
 
 const Welcome = styled.div`
 	padding: 2rem 0;
+	overflow: scroll;
 `
 
 export default AboutPage
