@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
-import { Layout, Container } from '../components/common'
+import { Layout, Container, Title } from '../components/common'
 import SEO from '../components/common/SEO'
 import './about.css'
 import logo from "../images/gatsby-icon.png"
@@ -11,10 +11,9 @@ const AboutPage = () => (
 		<React.Fragment>
 			<SEO title="about" />
 			<Welcome as={Container}>
-				<h2>
+				<Title>
 					<FormattedMessage id="about" />
-				</h2>
-
+				</Title>
 				<div className="about-content">
 					<img className="avatar-image" src={logo} alt="Logo" />
 					<div>
@@ -23,7 +22,7 @@ const AboutPage = () => (
 						Neben der Vollzeitstelle als Systemtechniker begann ich meinen schulischen Bildungsweg zu erweitern und holte das Abitur nach, um daraufhin das Studium als Informatiker (B.Sc.) Vertiefung System-Engineering beginnen zu können.
 						Tiefere Erkenntnisse im Bereich Web-Security und Computergrafik sammelte ich in meinem Auslandssemester an der University of Wisconsin, Kenosha (USA).
 						Nach erfolgreichem Studiumabschluss als Informatiker (B. Sc) Vertiefung System-Engineering, begann ich meine berufliche Laufbahn als Java Softwaredeveloper.
-        </div>
+        			</div>
 				</div>
 			</Welcome>
 		</React.Fragment>

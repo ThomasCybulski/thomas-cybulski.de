@@ -1,7 +1,5 @@
 import React from 'react'
-import en from 'react-intl/locale-data/en'
-import de from 'react-intl/locale-data/de'
-import { addLocaleData, IntlProvider } from 'react-intl'
+import { IntlProvider } from 'react-intl'
 import localEng from '../../../../data/en.json'
 import localDe from '../../../../data/de.json'
 import { Context } from '../Context'
@@ -9,8 +7,6 @@ import Provider from './Provider'
 import { Global } from './styles'
 import './layout.css'
 import Menu from '../Menu';
-
-addLocaleData([...en, ...de])
 
 const messages = {
 	en: localEng,
