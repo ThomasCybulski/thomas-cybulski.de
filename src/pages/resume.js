@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
-import { Layout, Container } from '../components/common'
+import { Layout, Container, Title } from '../components/common'
 import SEO from '../components/common/SEO'
 
 const ResumePage = () => (
@@ -9,9 +9,9 @@ const ResumePage = () => (
 		<React.Fragment>
 			<SEO title="resume" />
 			<Welcome as={Container}>
-				<h2>
+				<Title>
 					<FormattedMessage id="resume" />
-				</h2>
+				</Title>
 			</Welcome>
 		</React.Fragment>
 	</Layout>
