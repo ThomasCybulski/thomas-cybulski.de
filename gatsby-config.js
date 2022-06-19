@@ -1,72 +1,44 @@
-const config = require('./data/config');
-
 module.exports = {
-	siteMetadata: {
-		site_url: config.url,
-	},
-	plugins: [
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-styled-components',
-		'gatsby-plugin-netlify',
-		'gatsby-plugin-catch-links',
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
-		{
-			resolve: `gatsby-plugin-typography`,
-			options: {
-				pathToConfigModule: `src/utils/typography`,
-			},
-		},
-		{
-			resolve: 'gatsby-plugin-canonical-urls',
-			options: {
-				siteUrl: config.url,
-			},
-		},
-		{
-			resolve: 'gatsby-plugin-google-analytics',
-			options: {
-				trackingId: config.googleAnalyticsID,
-				head: true,
-			},
-		},
-		{
-			resolve: 'gatsby-plugin-nprogress',
-			options: {
-				color: config.themeColor,
-				showSpinner: false,
-			},
-		},
-		/* {
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'img',
-				path: `${__dirname}/src/images/`
-			}
-		}, */
-		{
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				name: 'Gatsby',
-				short_name: 'Gatsby',
-				start_url: '/',
-				background_color: config.backgroundColor,
-				theme_color: config.themeColor,
-				display: 'minimal-ui',
-				icons: [
-					{
-						src: '/favicon/logo-192x192.png',
-						sizes: '192x192',
-						type: 'image/png',
-					},
-					{
-						src: '/favicon/logo-512x512.png',
-						sizes: '512x512',
-						type: 'image/png',
-					},
-				],
-			},
-		},
-		// 'gatsby-plugin-offline'
-	],
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    'gatsby-plugin-dark-mode',
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/ // See below to configure properly
+        }
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Website of Thomas Cybulski`,
+        short_name: `Thomas Cybulski`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#02aab0`,
+        display: `standalone`,
+        icon: 'src/images/favicon.png',
+      },
+    },
+  ],
 };
