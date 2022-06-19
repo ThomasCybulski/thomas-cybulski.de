@@ -1,19 +1,11 @@
-import React from 'react'
-import { FormattedMessage } from 'react-intl'
-import { Layout, Container } from '../components/common'
-import SEO from '../components/common/SEO'
+import { useEffect } from 'react';
+import { navigate } from 'gatsby';
 
-const NotFoundPage = () => (
-	<Layout>
-		<React.Fragment>
-			<SEO title="not_found" />
-			<Container>
-				<h2>
-					<FormattedMessage id="not_found" />
-				</h2>
-			</Container>
-		</React.Fragment>
-	</Layout>
-)
+const PageNotFound = () => {
+  useEffect(() => {
+    navigate('/');
+  }, []);
+  return null;
+};
 
-export default NotFoundPage
+export default PageNotFound;
